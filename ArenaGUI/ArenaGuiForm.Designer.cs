@@ -39,9 +39,9 @@
             this.extraArgumentsTextBox = new System.Windows.Forms.TextBox();
             this.launchButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.playerArgumentsTextBox = new System.Windows.Forms.TextBox();
             this.playerArgumentsLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.evilArgumentsTextBox = new System.Windows.Forms.TextBox();
             this.environmentArgumentsLabel = new System.Windows.Forms.Label();
             this.recordGroupBox = new System.Windows.Forms.GroupBox();
             this.recordRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -61,6 +61,8 @@
             this.commandTextBox = new System.Windows.Forms.TextBox();
             this.sendCommandButton = new System.Windows.Forms.Button();
             this.commandGroupBox = new System.Windows.Forms.GroupBox();
+            this.selectProgramButton = new System.Windows.Forms.Button();
+            this.programOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.connectionSettingGroupBox.SuspendLayout();
             this.programArgumentsGroupBox.SuspendLayout();
             this.recordGroupBox.SuspendLayout();
@@ -120,9 +122,10 @@
             // 
             // programArgumentsGroupBox
             // 
-            this.programArgumentsGroupBox.Controls.Add(this.textBox2);
+            this.programArgumentsGroupBox.Controls.Add(this.selectProgramButton);
+            this.programArgumentsGroupBox.Controls.Add(this.evilArgumentsTextBox);
             this.programArgumentsGroupBox.Controls.Add(this.environmentArgumentsLabel);
-            this.programArgumentsGroupBox.Controls.Add(this.textBox1);
+            this.programArgumentsGroupBox.Controls.Add(this.playerArgumentsTextBox);
             this.programArgumentsGroupBox.Controls.Add(this.playerArgumentsLabel);
             this.programArgumentsGroupBox.Controls.Add(this.extraArgumentsTextBox);
             this.programArgumentsGroupBox.Controls.Add(this.extraArgumentsLabel);
@@ -159,6 +162,7 @@
             this.extraArgumentsTextBox.Name = "extraArgumentsTextBox";
             this.extraArgumentsTextBox.Size = new System.Drawing.Size(170, 22);
             this.extraArgumentsTextBox.TabIndex = 2;
+            this.extraArgumentsTextBox.Text = "--shell";
             // 
             // launchButton
             // 
@@ -182,14 +186,15 @@
             this.resetButton.TabIndex = 4;
             this.resetButton.Text = "重設";
             this.resetButton.UseVisualStyleBackColor = false;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
-            // textBox1
+            // playerArgumentsTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(276, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(467, 22);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "alpha=0 load=weights.bin search=1";
+            this.playerArgumentsTextBox.Location = new System.Drawing.Point(276, 15);
+            this.playerArgumentsTextBox.Name = "playerArgumentsTextBox";
+            this.playerArgumentsTextBox.Size = new System.Drawing.Size(467, 22);
+            this.playerArgumentsTextBox.TabIndex = 5;
+            this.playerArgumentsTextBox.Text = "alpha=0 load=weights.bin search=1";
             // 
             // playerArgumentsLabel
             // 
@@ -200,13 +205,13 @@
             this.playerArgumentsLabel.TabIndex = 4;
             this.playerArgumentsLabel.Text = "Player Arguments:";
             // 
-            // textBox2
+            // evilArgumentsTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(276, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(467, 22);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.Text = "load=weights.bin search=1";
+            this.evilArgumentsTextBox.Location = new System.Drawing.Point(276, 48);
+            this.evilArgumentsTextBox.Name = "evilArgumentsTextBox";
+            this.evilArgumentsTextBox.Size = new System.Drawing.Size(467, 22);
+            this.evilArgumentsTextBox.TabIndex = 7;
+            this.evilArgumentsTextBox.Text = "load=weights.bin search=1";
             // 
             // environmentArgumentsLabel
             // 
@@ -261,6 +266,7 @@
             this.controlGroupBox.Controls.Add(this.registerGroupBox);
             this.controlGroupBox.Controls.Add(this.renameGroupBox);
             this.controlGroupBox.Controls.Add(this.statusButton);
+            this.controlGroupBox.Enabled = false;
             this.controlGroupBox.Location = new System.Drawing.Point(784, 179);
             this.controlGroupBox.Name = "controlGroupBox";
             this.controlGroupBox.Size = new System.Drawing.Size(174, 354);
@@ -276,6 +282,7 @@
             this.statusButton.TabIndex = 0;
             this.statusButton.Text = "Status";
             this.statusButton.UseVisualStyleBackColor = true;
+            this.statusButton.Click += new System.EventHandler(this.statusButton_Click);
             // 
             // renameGroupBox
             // 
@@ -305,6 +312,7 @@
             this.renameButton.TabIndex = 8;
             this.renameButton.Text = "確認";
             this.renameButton.UseVisualStyleBackColor = false;
+            this.renameButton.Click += new System.EventHandler(this.renameButton_Click);
             // 
             // registerGroupBox
             // 
@@ -330,6 +338,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "確認";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // playNameTextBox
             // 
@@ -380,6 +389,7 @@
             this.sendCommandButton.TabIndex = 8;
             this.sendCommandButton.Text = "送出";
             this.sendCommandButton.UseVisualStyleBackColor = false;
+            this.sendCommandButton.Click += new System.EventHandler(this.sendCommandButton_Click);
             // 
             // commandGroupBox
             // 
@@ -391,6 +401,16 @@
             this.commandGroupBox.TabIndex = 9;
             this.commandGroupBox.TabStop = false;
             this.commandGroupBox.Text = "指令";
+            // 
+            // selectProgramButton
+            // 
+            this.selectProgramButton.Location = new System.Drawing.Point(91, 16);
+            this.selectProgramButton.Name = "selectProgramButton";
+            this.selectProgramButton.Size = new System.Drawing.Size(88, 23);
+            this.selectProgramButton.TabIndex = 8;
+            this.selectProgramButton.Text = "選擇執行檔";
+            this.selectProgramButton.UseVisualStyleBackColor = true;
+            this.selectProgramButton.Click += new System.EventHandler(this.selectProgramButton_Click);
             // 
             // ArenaGuiForm
             // 
@@ -435,9 +455,9 @@
         private System.Windows.Forms.TextBox extraArgumentsTextBox;
         private System.Windows.Forms.Label extraArgumentsLabel;
         private System.Windows.Forms.Button launchButton;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox evilArgumentsTextBox;
         private System.Windows.Forms.Label environmentArgumentsLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox playerArgumentsTextBox;
         private System.Windows.Forms.Label playerArgumentsLabel;
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.GroupBox recordGroupBox;
@@ -458,6 +478,8 @@
         private System.Windows.Forms.Label playNameLabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox playNameTextBox;
+        private System.Windows.Forms.Button selectProgramButton;
+        private System.Windows.Forms.OpenFileDialog programOpenFileDialog;
     }
 }
 

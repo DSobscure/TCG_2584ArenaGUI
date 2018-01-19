@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArenaGUI", "ArenaGUI\ArenaG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Echo", "Echo\Echo.csproj", "{6625B86B-7DF8-475C-B07D-1F1D4BE9FD8F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SslConnectionTest", "SslConnectionTest\SslConnectionTest.csproj", "{CBA5AF1D-D0C7-4675-8D00-321017D8E58D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6625B86B-7DF8-475C-B07D-1F1D4BE9FD8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6625B86B-7DF8-475C-B07D-1F1D4BE9FD8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6625B86B-7DF8-475C-B07D-1F1D4BE9FD8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA5AF1D-D0C7-4675-8D00-321017D8E58D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA5AF1D-D0C7-4675-8D00-321017D8E58D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA5AF1D-D0C7-4675-8D00-321017D8E58D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA5AF1D-D0C7-4675-8D00-321017D8E58D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
