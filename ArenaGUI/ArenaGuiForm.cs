@@ -74,9 +74,9 @@ namespace ArenaGUI
                 while (!process.HasExited)
                 {
                     string programOutput = process.StandardOutput.ReadLine();
-                    messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.AppendText($"{programOutput}\n"));
+                    messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.AppendText($"{programOutput}"));
                     messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.ScrollToCaret());
-                    connector.SendMessage(programOutput);
+                    connector.SendMessage(programOutput + "\n");
                 }
             });
         }
@@ -93,8 +93,13 @@ namespace ArenaGUI
 
         private void ForwardMessage(string message)
         {
-            messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.AppendText($"{message}\n"));
+            messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.AppendText($"{message}"));
             messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.ScrollToCaret());
+            if(message.Contains("summary:") || message.Contains("score="))
+            {
+                recordRichTextBox.InvokeIfRequired(() => recordRichTextBox.AppendText($"{message}"));
+                recordRichTextBox.InvokeIfRequired(() => recordRichTextBox.ScrollToCaret());
+            }
             process.StandardInput.WriteLine(message);
             process.StandardInput.Flush();
         }
@@ -106,18 +111,18 @@ namespace ArenaGUI
 
         private void renameButton_Click(object sender, EventArgs e)
         {
-            connector.SendMessage($"name {usernameTextBox.Text}");
+            connector.SendMessage($"name {usernameTextBox.Text}\n");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (playNameTextBox.Text.Trim().Length != 0)
             {
-                connector.SendMessage($"register {playNameTextBox.Text} as play");
+                connector.SendMessage($"register {playNameTextBox.Text} as play\n");
             }
             if (evilNameTextBox.Text.Trim().Length != 0)
             {
-                connector.SendMessage($"register {evilNameTextBox.Text} as evil");
+                connector.SendMessage($"register {evilNameTextBox.Text} as evil\n");
             }
         }
 
@@ -125,7 +130,7 @@ namespace ArenaGUI
         {
             if (commandTextBox.Text.Trim().Length != 0)
             {
-                connector.SendMessage($"{commandTextBox.Text}");
+                connector.SendMessage($"{commandTextBox.Text}\n");
             }
         }
     }

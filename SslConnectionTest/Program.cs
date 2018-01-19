@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections;
-using System.Net;
 using System.Net.Security;
 using System.Net.Sockets;
 using System.Security.Authentication;
-using System.Text;
 using System.Security.Cryptography.X509Certificates;
-using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace SslConnectionTest
 {
     class Program
     {
-        private static Hashtable certificateErrors = new Hashtable();
         // The following method is invoked by the RemoteCertificateValidationDelegate.
         public static bool ValidateServerCertificate(
               object sender,
@@ -22,13 +19,6 @@ namespace SslConnectionTest
               SslPolicyErrors sslPolicyErrors)
         {
             return true;
-            if (sslPolicyErrors == SslPolicyErrors.None)
-                return true;
-
-            Console.WriteLine("Certificate error: {0}", sslPolicyErrors);
-
-            // Do not allow this client to communicate with unauthenticated servers.
-            return false;
         }
         public static void RunClient()
         {
