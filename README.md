@@ -1,2 +1,2 @@
 # TCG_2584ArenaGUI
-NCTU TCG Course Final Tornament ArenaAUI
+NCTU TCG Course Final Tornament ArenaGUI
