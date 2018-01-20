@@ -93,6 +93,10 @@ namespace ArenaGUI
 
         private void ForwardMessage(string message)
         {
+            if(messageRichTextBox.Lines.Length > 500)
+            {
+                messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.Clear());
+            }
             messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.AppendText($"{message}"));
             messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.ScrollToCaret());
             if(message.Contains("summary:") || message.Contains("score"))
