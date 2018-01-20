@@ -95,10 +95,11 @@ namespace ArenaGUI
         {
             messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.AppendText($"{message}"));
             messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.ScrollToCaret());
-            if(message.Contains("summary:") || message.Contains("score="))
+            if(message.Contains("summary:") || message.Contains("score"))
             {
                 recordRichTextBox.InvokeIfRequired(() => recordRichTextBox.AppendText($"{message}"));
                 recordRichTextBox.InvokeIfRequired(() => recordRichTextBox.ScrollToCaret());
+                messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.Clear());
             }
             process.StandardInput.WriteLine(message);
             process.StandardInput.Flush();
