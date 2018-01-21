@@ -29,48 +29,48 @@
         private void InitializeComponent()
         {
             this.connectionSettingGroupBox = new System.Windows.Forms.GroupBox();
-            this.ipLabel = new System.Windows.Forms.Label();
-            this.ipTextBox = new System.Windows.Forms.TextBox();
             this.portTextBox = new System.Windows.Forms.TextBox();
             this.portLabel = new System.Windows.Forms.Label();
+            this.ipTextBox = new System.Windows.Forms.TextBox();
+            this.ipLabel = new System.Windows.Forms.Label();
             this.programArgumentsGroupBox = new System.Windows.Forms.GroupBox();
-            this.debugModeCheckBox = new System.Windows.Forms.CheckBox();
-            this.extraArgumentsLabel = new System.Windows.Forms.Label();
-            this.extraArgumentsTextBox = new System.Windows.Forms.TextBox();
-            this.launchButton = new System.Windows.Forms.Button();
-            this.resetButton = new System.Windows.Forms.Button();
-            this.playerArgumentsTextBox = new System.Windows.Forms.TextBox();
-            this.playerArgumentsLabel = new System.Windows.Forms.Label();
+            this.selectProgramButton = new System.Windows.Forms.Button();
             this.evilArgumentsTextBox = new System.Windows.Forms.TextBox();
             this.environmentArgumentsLabel = new System.Windows.Forms.Label();
+            this.playerArgumentsTextBox = new System.Windows.Forms.TextBox();
+            this.playerArgumentsLabel = new System.Windows.Forms.Label();
+            this.extraArgumentsTextBox = new System.Windows.Forms.TextBox();
+            this.extraArgumentsLabel = new System.Windows.Forms.Label();
+            this.debugModeCheckBox = new System.Windows.Forms.CheckBox();
+            this.launchButton = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
             this.recordGroupBox = new System.Windows.Forms.GroupBox();
             this.recordRichTextBox = new System.Windows.Forms.RichTextBox();
             this.messageGroupBox = new System.Windows.Forms.GroupBox();
             this.messageRichTextBox = new System.Windows.Forms.RichTextBox();
             this.controlGroupBox = new System.Windows.Forms.GroupBox();
-            this.statusButton = new System.Windows.Forms.Button();
-            this.renameGroupBox = new System.Windows.Forms.GroupBox();
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.renameButton = new System.Windows.Forms.Button();
+            this.commandGroupBox = new System.Windows.Forms.GroupBox();
+            this.sendCommandButton = new System.Windows.Forms.Button();
+            this.commandTextBox = new System.Windows.Forms.TextBox();
             this.registerGroupBox = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.playNameTextBox = new System.Windows.Forms.TextBox();
-            this.playNameLabel = new System.Windows.Forms.Label();
             this.evilNameLabel = new System.Windows.Forms.Label();
             this.evilNameTextBox = new System.Windows.Forms.TextBox();
-            this.commandTextBox = new System.Windows.Forms.TextBox();
-            this.sendCommandButton = new System.Windows.Forms.Button();
-            this.commandGroupBox = new System.Windows.Forms.GroupBox();
-            this.selectProgramButton = new System.Windows.Forms.Button();
+            this.playNameLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.playNameTextBox = new System.Windows.Forms.TextBox();
+            this.renameGroupBox = new System.Windows.Forms.GroupBox();
+            this.renameButton = new System.Windows.Forms.Button();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.statusButton = new System.Windows.Forms.Button();
             this.programOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.connectionSettingGroupBox.SuspendLayout();
             this.programArgumentsGroupBox.SuspendLayout();
             this.recordGroupBox.SuspendLayout();
             this.messageGroupBox.SuspendLayout();
             this.controlGroupBox.SuspendLayout();
-            this.renameGroupBox.SuspendLayout();
-            this.registerGroupBox.SuspendLayout();
             this.commandGroupBox.SuspendLayout();
+            this.registerGroupBox.SuspendLayout();
+            this.renameGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // connectionSettingGroupBox
@@ -85,23 +85,6 @@
             this.connectionSettingGroupBox.TabIndex = 1;
             this.connectionSettingGroupBox.TabStop = false;
             this.connectionSettingGroupBox.Text = "連線設定";
-            // 
-            // ipLabel
-            // 
-            this.ipLabel.AutoSize = true;
-            this.ipLabel.Location = new System.Drawing.Point(7, 22);
-            this.ipLabel.Name = "ipLabel";
-            this.ipLabel.Size = new System.Drawing.Size(18, 12);
-            this.ipLabel.TabIndex = 0;
-            this.ipLabel.Text = "IP:";
-            // 
-            // ipTextBox
-            // 
-            this.ipTextBox.Location = new System.Drawing.Point(35, 17);
-            this.ipTextBox.Name = "ipTextBox";
-            this.ipTextBox.Size = new System.Drawing.Size(137, 22);
-            this.ipTextBox.TabIndex = 1;
-            this.ipTextBox.Text = "140.113.86.124";
             // 
             // portTextBox
             // 
@@ -120,6 +103,23 @@
             this.portLabel.TabIndex = 2;
             this.portLabel.Text = "Port:";
             // 
+            // ipTextBox
+            // 
+            this.ipTextBox.Location = new System.Drawing.Point(35, 17);
+            this.ipTextBox.Name = "ipTextBox";
+            this.ipTextBox.Size = new System.Drawing.Size(137, 22);
+            this.ipTextBox.TabIndex = 1;
+            this.ipTextBox.Text = "140.113.86.124";
+            // 
+            // ipLabel
+            // 
+            this.ipLabel.AutoSize = true;
+            this.ipLabel.Location = new System.Drawing.Point(7, 22);
+            this.ipLabel.Name = "ipLabel";
+            this.ipLabel.Size = new System.Drawing.Size(18, 12);
+            this.ipLabel.TabIndex = 0;
+            this.ipLabel.Text = "IP:";
+            // 
             // programArgumentsGroupBox
             // 
             this.programArgumentsGroupBox.Controls.Add(this.selectProgramButton);
@@ -137,15 +137,57 @@
             this.programArgumentsGroupBox.TabStop = false;
             this.programArgumentsGroupBox.Text = "程式參數";
             // 
-            // debugModeCheckBox
+            // selectProgramButton
             // 
-            this.debugModeCheckBox.AutoSize = true;
-            this.debugModeCheckBox.Location = new System.Drawing.Point(6, 17);
-            this.debugModeCheckBox.Name = "debugModeCheckBox";
-            this.debugModeCheckBox.Size = new System.Drawing.Size(55, 16);
-            this.debugModeCheckBox.TabIndex = 0;
-            this.debugModeCheckBox.Text = "Debug";
-            this.debugModeCheckBox.UseVisualStyleBackColor = true;
+            this.selectProgramButton.Location = new System.Drawing.Point(91, 16);
+            this.selectProgramButton.Name = "selectProgramButton";
+            this.selectProgramButton.Size = new System.Drawing.Size(88, 23);
+            this.selectProgramButton.TabIndex = 8;
+            this.selectProgramButton.Text = "選擇執行檔";
+            this.selectProgramButton.UseVisualStyleBackColor = true;
+            this.selectProgramButton.Click += new System.EventHandler(this.selectProgramButton_Click);
+            // 
+            // evilArgumentsTextBox
+            // 
+            this.evilArgumentsTextBox.Location = new System.Drawing.Point(276, 48);
+            this.evilArgumentsTextBox.Name = "evilArgumentsTextBox";
+            this.evilArgumentsTextBox.Size = new System.Drawing.Size(467, 22);
+            this.evilArgumentsTextBox.TabIndex = 7;
+            this.evilArgumentsTextBox.Text = "load=new_weight3_4000000_0001 search=1 ex_tile=1 name=DSphantasm_v3";
+            // 
+            // environmentArgumentsLabel
+            // 
+            this.environmentArgumentsLabel.AutoSize = true;
+            this.environmentArgumentsLabel.Location = new System.Drawing.Point(185, 53);
+            this.environmentArgumentsLabel.Name = "environmentArgumentsLabel";
+            this.environmentArgumentsLabel.Size = new System.Drawing.Size(81, 12);
+            this.environmentArgumentsLabel.TabIndex = 6;
+            this.environmentArgumentsLabel.Text = "Evil Arguments:";
+            // 
+            // playerArgumentsTextBox
+            // 
+            this.playerArgumentsTextBox.Location = new System.Drawing.Point(276, 15);
+            this.playerArgumentsTextBox.Name = "playerArgumentsTextBox";
+            this.playerArgumentsTextBox.Size = new System.Drawing.Size(467, 22);
+            this.playerArgumentsTextBox.TabIndex = 5;
+            this.playerArgumentsTextBox.Text = "alpha=0 load=new_weight3_4000000_0001 search=1 name=DSzenith_v3";
+            // 
+            // playerArgumentsLabel
+            // 
+            this.playerArgumentsLabel.AutoSize = true;
+            this.playerArgumentsLabel.Location = new System.Drawing.Point(185, 20);
+            this.playerArgumentsLabel.Name = "playerArgumentsLabel";
+            this.playerArgumentsLabel.Size = new System.Drawing.Size(91, 12);
+            this.playerArgumentsLabel.TabIndex = 4;
+            this.playerArgumentsLabel.Text = "Player Arguments:";
+            // 
+            // extraArgumentsTextBox
+            // 
+            this.extraArgumentsTextBox.Location = new System.Drawing.Point(6, 54);
+            this.extraArgumentsTextBox.Name = "extraArgumentsTextBox";
+            this.extraArgumentsTextBox.Size = new System.Drawing.Size(170, 22);
+            this.extraArgumentsTextBox.TabIndex = 2;
+            this.extraArgumentsTextBox.Text = "--shell";
             // 
             // extraArgumentsLabel
             // 
@@ -156,13 +198,15 @@
             this.extraArgumentsLabel.TabIndex = 1;
             this.extraArgumentsLabel.Text = "額外參數:";
             // 
-            // extraArgumentsTextBox
+            // debugModeCheckBox
             // 
-            this.extraArgumentsTextBox.Location = new System.Drawing.Point(6, 54);
-            this.extraArgumentsTextBox.Name = "extraArgumentsTextBox";
-            this.extraArgumentsTextBox.Size = new System.Drawing.Size(170, 22);
-            this.extraArgumentsTextBox.TabIndex = 2;
-            this.extraArgumentsTextBox.Text = "--shell";
+            this.debugModeCheckBox.AutoSize = true;
+            this.debugModeCheckBox.Location = new System.Drawing.Point(6, 17);
+            this.debugModeCheckBox.Name = "debugModeCheckBox";
+            this.debugModeCheckBox.Size = new System.Drawing.Size(55, 16);
+            this.debugModeCheckBox.TabIndex = 0;
+            this.debugModeCheckBox.Text = "Debug";
+            this.debugModeCheckBox.UseVisualStyleBackColor = true;
             // 
             // launchButton
             // 
@@ -187,40 +231,6 @@
             this.resetButton.Text = "重設";
             this.resetButton.UseVisualStyleBackColor = false;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
-            // 
-            // playerArgumentsTextBox
-            // 
-            this.playerArgumentsTextBox.Location = new System.Drawing.Point(276, 15);
-            this.playerArgumentsTextBox.Name = "playerArgumentsTextBox";
-            this.playerArgumentsTextBox.Size = new System.Drawing.Size(467, 22);
-            this.playerArgumentsTextBox.TabIndex = 5;
-            this.playerArgumentsTextBox.Text = "alpha=0 load=weights.bin search=1";
-            // 
-            // playerArgumentsLabel
-            // 
-            this.playerArgumentsLabel.AutoSize = true;
-            this.playerArgumentsLabel.Location = new System.Drawing.Point(185, 20);
-            this.playerArgumentsLabel.Name = "playerArgumentsLabel";
-            this.playerArgumentsLabel.Size = new System.Drawing.Size(91, 12);
-            this.playerArgumentsLabel.TabIndex = 4;
-            this.playerArgumentsLabel.Text = "Player Arguments:";
-            // 
-            // evilArgumentsTextBox
-            // 
-            this.evilArgumentsTextBox.Location = new System.Drawing.Point(276, 48);
-            this.evilArgumentsTextBox.Name = "evilArgumentsTextBox";
-            this.evilArgumentsTextBox.Size = new System.Drawing.Size(467, 22);
-            this.evilArgumentsTextBox.TabIndex = 7;
-            this.evilArgumentsTextBox.Text = "load=weights.bin search=1";
-            // 
-            // environmentArgumentsLabel
-            // 
-            this.environmentArgumentsLabel.AutoSize = true;
-            this.environmentArgumentsLabel.Location = new System.Drawing.Point(185, 53);
-            this.environmentArgumentsLabel.Name = "environmentArgumentsLabel";
-            this.environmentArgumentsLabel.Size = new System.Drawing.Size(81, 12);
-            this.environmentArgumentsLabel.TabIndex = 6;
-            this.environmentArgumentsLabel.Text = "Evil Arguments:";
             // 
             // recordGroupBox
             // 
@@ -274,45 +284,36 @@
             this.controlGroupBox.TabStop = false;
             this.controlGroupBox.Text = "控制面板";
             // 
-            // statusButton
+            // commandGroupBox
             // 
-            this.statusButton.Location = new System.Drawing.Point(6, 21);
-            this.statusButton.Name = "statusButton";
-            this.statusButton.Size = new System.Drawing.Size(162, 34);
-            this.statusButton.TabIndex = 0;
-            this.statusButton.Text = "Status";
-            this.statusButton.UseVisualStyleBackColor = true;
-            this.statusButton.Click += new System.EventHandler(this.statusButton_Click);
+            this.commandGroupBox.Controls.Add(this.sendCommandButton);
+            this.commandGroupBox.Controls.Add(this.commandTextBox);
+            this.commandGroupBox.Location = new System.Drawing.Point(6, 265);
+            this.commandGroupBox.Name = "commandGroupBox";
+            this.commandGroupBox.Size = new System.Drawing.Size(161, 82);
+            this.commandGroupBox.TabIndex = 9;
+            this.commandGroupBox.TabStop = false;
+            this.commandGroupBox.Text = "指令";
             // 
-            // renameGroupBox
+            // sendCommandButton
             // 
-            this.renameGroupBox.Controls.Add(this.renameButton);
-            this.renameGroupBox.Controls.Add(this.usernameTextBox);
-            this.renameGroupBox.Location = new System.Drawing.Point(6, 61);
-            this.renameGroupBox.Name = "renameGroupBox";
-            this.renameGroupBox.Size = new System.Drawing.Size(161, 78);
-            this.renameGroupBox.TabIndex = 1;
-            this.renameGroupBox.TabStop = false;
-            this.renameGroupBox.Text = "更名";
+            this.sendCommandButton.BackColor = System.Drawing.SystemColors.Control;
+            this.sendCommandButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.sendCommandButton.Location = new System.Drawing.Point(39, 49);
+            this.sendCommandButton.Name = "sendCommandButton";
+            this.sendCommandButton.Size = new System.Drawing.Size(84, 23);
+            this.sendCommandButton.TabIndex = 8;
+            this.sendCommandButton.Text = "送出";
+            this.sendCommandButton.UseVisualStyleBackColor = false;
+            this.sendCommandButton.Click += new System.EventHandler(this.sendCommandButton_Click);
             // 
-            // usernameTextBox
+            // commandTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(8, 21);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(147, 22);
-            this.usernameTextBox.TabIndex = 0;
-            // 
-            // renameButton
-            // 
-            this.renameButton.BackColor = System.Drawing.SystemColors.Control;
-            this.renameButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.renameButton.Location = new System.Drawing.Point(39, 49);
-            this.renameButton.Name = "renameButton";
-            this.renameButton.Size = new System.Drawing.Size(84, 23);
-            this.renameButton.TabIndex = 8;
-            this.renameButton.Text = "確認";
-            this.renameButton.UseVisualStyleBackColor = false;
-            this.renameButton.Click += new System.EventHandler(this.renameButton_Click);
+            this.commandTextBox.Location = new System.Drawing.Point(8, 21);
+            this.commandTextBox.Name = "commandTextBox";
+            this.commandTextBox.Size = new System.Drawing.Size(147, 22);
+            this.commandTextBox.TabIndex = 0;
+            this.commandTextBox.Text = "match open DSzenith_v3:DSphantasm_v3";
             // 
             // registerGroupBox
             // 
@@ -327,6 +328,32 @@
             this.registerGroupBox.TabIndex = 9;
             this.registerGroupBox.TabStop = false;
             this.registerGroupBox.Text = "註冊";
+            // 
+            // evilNameLabel
+            // 
+            this.evilNameLabel.AutoSize = true;
+            this.evilNameLabel.Location = new System.Drawing.Point(6, 49);
+            this.evilNameLabel.Name = "evilNameLabel";
+            this.evilNameLabel.Size = new System.Drawing.Size(28, 12);
+            this.evilNameLabel.TabIndex = 11;
+            this.evilNameLabel.Text = "evil: ";
+            // 
+            // evilNameTextBox
+            // 
+            this.evilNameTextBox.Location = new System.Drawing.Point(43, 46);
+            this.evilNameTextBox.Name = "evilNameTextBox";
+            this.evilNameTextBox.Size = new System.Drawing.Size(112, 22);
+            this.evilNameTextBox.TabIndex = 10;
+            this.evilNameTextBox.Text = "DSphantasm_v3";
+            // 
+            // playNameLabel
+            // 
+            this.playNameLabel.AutoSize = true;
+            this.playNameLabel.Location = new System.Drawing.Point(6, 24);
+            this.playNameLabel.Name = "playNameLabel";
+            this.playNameLabel.Size = new System.Drawing.Size(31, 12);
+            this.playNameLabel.TabIndex = 9;
+            this.playNameLabel.Text = "play: ";
             // 
             // button1
             // 
@@ -346,71 +373,48 @@
             this.playNameTextBox.Name = "playNameTextBox";
             this.playNameTextBox.Size = new System.Drawing.Size(112, 22);
             this.playNameTextBox.TabIndex = 0;
+            this.playNameTextBox.Text = "DSzenith_v3";
             // 
-            // playNameLabel
+            // renameGroupBox
             // 
-            this.playNameLabel.AutoSize = true;
-            this.playNameLabel.Location = new System.Drawing.Point(6, 24);
-            this.playNameLabel.Name = "playNameLabel";
-            this.playNameLabel.Size = new System.Drawing.Size(31, 12);
-            this.playNameLabel.TabIndex = 9;
-            this.playNameLabel.Text = "play: ";
+            this.renameGroupBox.Controls.Add(this.renameButton);
+            this.renameGroupBox.Controls.Add(this.usernameTextBox);
+            this.renameGroupBox.Location = new System.Drawing.Point(6, 61);
+            this.renameGroupBox.Name = "renameGroupBox";
+            this.renameGroupBox.Size = new System.Drawing.Size(161, 78);
+            this.renameGroupBox.TabIndex = 1;
+            this.renameGroupBox.TabStop = false;
+            this.renameGroupBox.Text = "更名";
             // 
-            // evilNameLabel
+            // renameButton
             // 
-            this.evilNameLabel.AutoSize = true;
-            this.evilNameLabel.Location = new System.Drawing.Point(6, 49);
-            this.evilNameLabel.Name = "evilNameLabel";
-            this.evilNameLabel.Size = new System.Drawing.Size(28, 12);
-            this.evilNameLabel.TabIndex = 11;
-            this.evilNameLabel.Text = "evil: ";
+            this.renameButton.BackColor = System.Drawing.SystemColors.Control;
+            this.renameButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.renameButton.Location = new System.Drawing.Point(39, 49);
+            this.renameButton.Name = "renameButton";
+            this.renameButton.Size = new System.Drawing.Size(84, 23);
+            this.renameButton.TabIndex = 8;
+            this.renameButton.Text = "確認";
+            this.renameButton.UseVisualStyleBackColor = false;
+            this.renameButton.Click += new System.EventHandler(this.renameButton_Click);
             // 
-            // evilNameTextBox
+            // usernameTextBox
             // 
-            this.evilNameTextBox.Location = new System.Drawing.Point(43, 46);
-            this.evilNameTextBox.Name = "evilNameTextBox";
-            this.evilNameTextBox.Size = new System.Drawing.Size(112, 22);
-            this.evilNameTextBox.TabIndex = 10;
+            this.usernameTextBox.Location = new System.Drawing.Point(8, 21);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(147, 22);
+            this.usernameTextBox.TabIndex = 0;
+            this.usernameTextBox.Text = "Heptagram";
             // 
-            // commandTextBox
+            // statusButton
             // 
-            this.commandTextBox.Location = new System.Drawing.Point(8, 21);
-            this.commandTextBox.Name = "commandTextBox";
-            this.commandTextBox.Size = new System.Drawing.Size(147, 22);
-            this.commandTextBox.TabIndex = 0;
-            // 
-            // sendCommandButton
-            // 
-            this.sendCommandButton.BackColor = System.Drawing.SystemColors.Control;
-            this.sendCommandButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.sendCommandButton.Location = new System.Drawing.Point(39, 49);
-            this.sendCommandButton.Name = "sendCommandButton";
-            this.sendCommandButton.Size = new System.Drawing.Size(84, 23);
-            this.sendCommandButton.TabIndex = 8;
-            this.sendCommandButton.Text = "送出";
-            this.sendCommandButton.UseVisualStyleBackColor = false;
-            this.sendCommandButton.Click += new System.EventHandler(this.sendCommandButton_Click);
-            // 
-            // commandGroupBox
-            // 
-            this.commandGroupBox.Controls.Add(this.sendCommandButton);
-            this.commandGroupBox.Controls.Add(this.commandTextBox);
-            this.commandGroupBox.Location = new System.Drawing.Point(6, 265);
-            this.commandGroupBox.Name = "commandGroupBox";
-            this.commandGroupBox.Size = new System.Drawing.Size(161, 82);
-            this.commandGroupBox.TabIndex = 9;
-            this.commandGroupBox.TabStop = false;
-            this.commandGroupBox.Text = "指令";
-            // 
-            // selectProgramButton
-            // 
-            this.selectProgramButton.Location = new System.Drawing.Point(91, 16);
-            this.selectProgramButton.Name = "selectProgramButton";
-            this.selectProgramButton.Size = new System.Drawing.Size(88, 23);
-            this.selectProgramButton.TabIndex = 8;
-            this.selectProgramButton.Text = "選擇執行檔";
-            this.selectProgramButton.UseVisualStyleBackColor = true;
-            this.selectProgramButton.Click += new System.EventHandler(this.selectProgramButton_Click);
+            this.statusButton.Location = new System.Drawing.Point(6, 21);
+            this.statusButton.Name = "statusButton";
+            this.statusButton.Size = new System.Drawing.Size(162, 34);
+            this.statusButton.TabIndex = 0;
+            this.statusButton.Text = "Status";
+            this.statusButton.UseVisualStyleBackColor = true;
+            this.statusButton.Click += new System.EventHandler(this.statusButton_Click);
             // 
             // ArenaGuiForm
             // 
@@ -433,12 +437,12 @@
             this.recordGroupBox.ResumeLayout(false);
             this.messageGroupBox.ResumeLayout(false);
             this.controlGroupBox.ResumeLayout(false);
-            this.renameGroupBox.ResumeLayout(false);
-            this.renameGroupBox.PerformLayout();
-            this.registerGroupBox.ResumeLayout(false);
-            this.registerGroupBox.PerformLayout();
             this.commandGroupBox.ResumeLayout(false);
             this.commandGroupBox.PerformLayout();
+            this.registerGroupBox.ResumeLayout(false);
+            this.registerGroupBox.PerformLayout();
+            this.renameGroupBox.ResumeLayout(false);
+            this.renameGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }

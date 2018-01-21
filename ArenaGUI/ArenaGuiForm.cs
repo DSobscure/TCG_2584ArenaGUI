@@ -74,8 +74,14 @@ namespace ArenaGUI
                 while (!process.HasExited)
                 {
                     string programOutput = process.StandardOutput.ReadLine();
-                    messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.AppendText($"{programOutput}"));
-                    messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.ScrollToCaret());
+                    messageRichTextBox.InvokeIfRequired(() =>
+                    {
+                        lock (messageRichTextBox)
+                        {
+                            messageRichTextBox.AppendText($"{programOutput}");
+                            messageRichTextBox.ScrollToCaret();
+                        }
+                    });
                     connector.SendMessage(programOutput + "\n");
                 }
             });
@@ -93,17 +99,37 @@ namespace ArenaGUI
 
         private void ForwardMessage(string message)
         {
-            if(messageRichTextBox.Lines.Length > 500)
+            messageRichTextBox.InvokeIfRequired(() =>
             {
-                messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.Clear());
-            }
-            messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.AppendText($"{message}"));
-            messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.ScrollToCaret());
-            if(message.Contains("summary:") || message.Contains("score"))
+                lock (messageRichTextBox)
+                {
+                    if(messageRichTextBox.Lines.Length > 500)
+                    messageRichTextBox.Clear();
+                }
+            });
+            messageRichTextBox.InvokeIfRequired(() =>
             {
-                recordRichTextBox.InvokeIfRequired(() => recordRichTextBox.AppendText($"{message}"));
-                recordRichTextBox.InvokeIfRequired(() => recordRichTextBox.ScrollToCaret());
-                messageRichTextBox.InvokeIfRequired(() => messageRichTextBox.Clear());
+                lock (messageRichTextBox)
+                {
+                    messageRichTextBox.AppendText($"{message}");
+                    messageRichTextBox.ScrollToCaret();
+                }
+            });
+            if (message.Contains("summary:") || message.Contains("score"))
+            {
+                recordRichTextBox.InvokeIfRequired(() =>
+                {
+                    lock (recordRichTextBox)
+                    {
+                        recordRichTextBox.AppendText($"{message}");
+                        recordRichTextBox.ScrollToCaret();
+                    }
+                });
+                messageRichTextBox.InvokeIfRequired(() =>
+                {
+                    lock (messageRichTextBox)
+                        messageRichTextBox.Clear();
+                });
             }
             process.StandardInput.WriteLine(message);
             process.StandardInput.Flush();
